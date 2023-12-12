@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="661.0" style="-fx-background-color: #F6F4EB;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.passwordmanager.RegisterViewController">
+   <children>
+      <AnchorPane layoutX="142.0" layoutY="32.0" prefHeight="467.0" prefWidth="376.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <ImageView fitHeight="152.0" fitWidth="151.0" layoutX="117.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/D:/Tudor/School/OOP/password-manager/src/pictures/padlock3.jpg" />
+               </image>
+            </ImageView>
+            <TextField fx:id="username" layoutX="29.0" layoutY="163.0" prefHeight="26.0" prefWidth="318.0" promptText="Username" />
+            <Label layoutX="26.0" layoutY="132.0" text="Username">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="28.0" layoutY="288.0" text="Password">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="password" layoutX="29.0" layoutY="315.0" prefHeight="26.0" prefWidth="318.0" promptText="Password" />
+            <TextField fx:id="email" layoutX="29.0" layoutY="242.0" prefHeight="26.0" prefWidth="318.0" promptText="Email address" />
+            <Label layoutX="29.0" layoutY="215.0" text="Email">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="131.0" layoutY="360.0" mnemonicParsing="false" onAction="#tryRegistration" prefHeight="38.0" prefWidth="114.0" style="-fx-background-color: #4682A9;" text="Create account" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="131.0" layoutY="416.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="38.0" prefWidth="114.0" style="-fx-background-color: #4682A9;" text="Return" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Line endX="195.29296875" endY="-0.7071037292480469" layoutX="188.0" startX="-188.00003051757812" startY="3.814697265625E-6" />
+            <Line endX="-214.00003051757812" endY="-49.499996185302734" layoutX="214.0" layoutY="50.0" startX="-214.70712280273438" startY="417.0" />
+            <Line endX="181.29296875" endY="2.70709228515625" layoutX="202.0" layoutY="465.0" startX="-202.00003051757812" startY="3.5928955078125" />
+            <Line endX="137.5858154296875" endY="331.0" layoutX="245.0" layoutY="136.0" startX="139.0001220703125" startY="-137.41421508789062" />
+            <Label fx:id="usernameError" layoutX="27.0" layoutY="114.0" prefHeight="18.0" prefWidth="331.0" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="emailError" layoutX="27.0" layoutY="196.0" prefHeight="18.0" prefWidth="331.0" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>

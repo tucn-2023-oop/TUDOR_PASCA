@@ -1,16 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.passwordmanager.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="661.0" style="-fx-background-color: #F6F4EB;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.passwordmanager.LoginController">
+   <children>
+      <AnchorPane layoutX="142.0" layoutY="32.0" prefHeight="465.0" prefWidth="376.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000;">
+         <children>
+            <ImageView fitHeight="152.0" fitWidth="151.0" layoutX="113.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="file:/D:/Tudor/School/OOP/password-manager/src/pictures/padlock3.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="27.0" layoutY="150.0" text="Username">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="28.0" layoutY="233.0" text="Password">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="username" layoutX="28.0" layoutY="177.0" prefHeight="26.0" prefWidth="318.0" promptText="Username" />
+            <PasswordField fx:id="password" layoutX="28.0" layoutY="261.0" prefHeight="26.0" prefWidth="318.0" promptText="Password" />
+            <Button layoutX="131.0" layoutY="323.0" mnemonicParsing="false" onAction="#userLogin" prefHeight="38.0" prefWidth="114.0" style="-fx-background-color: #4682A9;" text="Log In" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="131.0" layoutY="388.0" mnemonicParsing="false" onAction="#goToRegister" prefHeight="38.0" prefWidth="114.0" style="-fx-background-color: #4682A9;" text="Register" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Label fx:id="wrongLogin" layoutX="28.0" layoutY="124.0" prefHeight="26.0" prefWidth="318.0" textAlignment="CENTER" textFill="#ff0606">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font></Label>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>
