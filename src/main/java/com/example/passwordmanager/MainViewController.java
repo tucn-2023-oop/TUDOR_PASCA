@@ -31,6 +31,10 @@ public class MainViewController extends Controller implements Initializable {
         MainViewController.userId = userId;
     }
 
+    public static int getUserId() {
+        return userId;
+    }
+
     private void showAccountDetails(Account account) {
         if (account != null) {
             titleLabel.setText(account.title);

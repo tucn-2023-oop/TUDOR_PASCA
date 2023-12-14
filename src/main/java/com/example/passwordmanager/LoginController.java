@@ -16,10 +16,11 @@ public class LoginController extends Controller {
     private Label wrongLogin;
 
     @FXML
-    public void userLogin() throws IOException {
+    public void userLogin() {
         if (Database.isExistingUser(username.getText(), password.getText())) {
             int userId = Database.getUserId(username.getText(), password.getText());
-            goToMainView(userId);
+            setUserId(userId);
+            goToMainView();
         } else if (username.getText().isEmpty() || password.getText().isEmpty()) {
             wrongLogin.setText("Please enter your credentials!");
         } else {

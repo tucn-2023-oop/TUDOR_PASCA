@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="528.0" prefWidth="661.0" style="-fx-background-color: #F6F4EB;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.passwordmanager.EntryCreationController">
+   <children>
+      <AnchorPane layoutX="59.0" layoutY="40.0" prefHeight="448.0" prefWidth="544.0" style="-fx-background-color: #ffffff; -fx-border-color: #000000;">
+         <children>
+            <Label layoutX="194.0" layoutY="7.0" prefHeight="46.0" prefWidth="176.0" text="Account Entry Creator">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="titleField" layoutX="51.0" layoutY="98.0" prefHeight="26.0" prefWidth="266.0" promptText="Title" />
+            <TextField fx:id="urlField" layoutX="52.0" layoutY="169.0" prefHeight="26.0" prefWidth="266.0" promptText="URL" />
+            <TextField fx:id="usernameField" layoutX="52.0" layoutY="242.0" prefHeight="26.0" prefWidth="266.0" promptText="Username" />
+            <TextField fx:id="passwordField" layoutX="53.0" layoutY="316.0" prefHeight="26.0" prefWidth="266.0" promptText="Password" />
+            <Label layoutX="53.0" layoutY="72.0" prefHeight="18.0" prefWidth="106.0" text="Title">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="53.0" layoutY="143.0" prefHeight="18.0" prefWidth="106.0" text="URL">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="51.0" layoutY="214.0" prefHeight="18.0" prefWidth="106.0" text="Username">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="53.0" layoutY="289.0" prefHeight="18.0" prefWidth="106.0" text="Password">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="348.0" layoutY="60.0" prefHeight="370.0" prefWidth="176.0" style="-fx-border-color: #000000; -fx-background-color: #4682A9;">
+               <children>
+                  <Slider fx:id="lengthSlider" layoutX="8.0" layoutY="72.0" prefHeight="24.0" prefWidth="159.0" showTickMarks="true" snapToTicks="true" />
+                  <RadioButton fx:id="capitalLettersRadio" layoutX="12.0" layoutY="108.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="A-Z" textFill="WHITE" />
+                  <RadioButton fx:id="smallLettersRadio" layoutX="12.0" layoutY="137.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="a-z" textFill="WHITE" />
+                  <RadioButton fx:id="digitsRadio" layoutX="13.0" layoutY="166.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="42.0" text="1-9" textFill="WHITE" />
+                  <Label layoutX="8.0" layoutY="14.0" text="Generate Random Password" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="10.0" layoutY="48.0" text="Length (1 - 100)" textFill="WHITE" />
+                  <RadioButton fx:id="specialCharactersRadio" layoutX="13.0" layoutY="197.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="122.0" text="Special Characters" textFill="WHITE" />
+                  <TextField fx:id="result" layoutX="13.0" layoutY="279.0" />
+                  <Button layoutX="26.0" layoutY="321.0" mnemonicParsing="false" onAction="#copyPasswordToClipboard" prefHeight="34.0" prefWidth="52.0" style="-fx-background-color: #F6F4EB;">
+                     <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="file:/D:/Tudor/School/OOP/password-manager/src/pictures/copy_text_icon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="95.0" layoutY="321.0" mnemonicParsing="false" onAction="#setPasswordToTextField" prefHeight="34.0" prefWidth="52.0" style="-fx-background-color: #F6F4EB;" text="Select" />
+                  <Button layoutX="29.0" layoutY="236.0" mnemonicParsing="false" onAction="#generatePassword" prefHeight="18.0" prefWidth="118.0" style="-fx-background-color: #F6F4EB;" text="Generate Password" />
+               </children>
+            </AnchorPane>
+            <Button layoutX="61.0" layoutY="377.0" mnemonicParsing="false" onAction="#writeAccountEntry" prefHeight="34.0" prefWidth="97.0" style="-fx-background-color: #4682A9;" text="Save" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="194.0" layoutY="377.0" mnemonicParsing="false" onAction="#goToMainView" prefHeight="34.0" prefWidth="98.0" style="-fx-background-color: #4682A9;" text="Return" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Label fx:id="warningLabel" layoutX="53.0" layoutY="44.0" prefHeight="18.0" prefWidth="159.0" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

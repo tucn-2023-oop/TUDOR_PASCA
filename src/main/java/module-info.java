@@ -6,6 +6,7 @@ module com.example.passwordmanager {
     requires java.sql;
     requires java.datatransfer;
     requires java.desktop;
+    requires org.apache.commons.lang3;
 
     opens com.example.passwordmanager to javafx.fxml;
     exports com.example.passwordmanager;

@@ -1,7 +1,6 @@
 package com.example.passwordmanager;
 
 import javafx.fxml.FXML;
-import javafx.scene.chart.PieChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -28,7 +27,7 @@ public class RegisterViewController extends Controller {
     }
 
     @FXML
-    public void tryRegistration() throws IOException {
+    public void tryRegistration() {
         usernameError.setText("");
         emailError.setText("");
         boolean invalidData = false;
@@ -54,7 +53,8 @@ public class RegisterViewController extends Controller {
             return;
         createAccount();
         int userId = Database.getUserId(username.getText(), password.getText());
-        goToMainView(userId);
+        setUserId(userId);
+        goToMainView();
     }
 
     private void createAccount() {

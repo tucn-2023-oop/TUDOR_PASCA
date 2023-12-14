@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="password_manager@localhost" uuid="1a578ddb-1b65-458e-b2d8-76ce07b3a9c0">
+    <data-source source="LOCAL" name="password_manager@localhost" uuid="f2e3744e-fcd9-409a-9944-7f3a3fa635f6">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/password_manager</jdbc-url>
+      <jdbc-additional-properties>
+        <property name="com.intellij.clouds.kubernetes.db.host.port" />
+        <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
+        <property name="com.intellij.clouds.kubernetes.db.container.port" />
+      </jdbc-additional-properties>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

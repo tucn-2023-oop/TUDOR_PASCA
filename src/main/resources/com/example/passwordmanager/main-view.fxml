@@ -21,12 +21,12 @@
                </font>
             </Button>
             <Line endX="530.199951171875" endY="33.20000076293945" layoutX="130.0" layoutY="16.0" startX="-130.00001525878906" startY="33.20000076293945" />
-            <Button layoutX="119.0" layoutY="12.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="73.0" style="-fx-background-color: #F6F4EB;" text="Add new">
+            <Button layoutX="119.0" layoutY="12.0" mnemonicParsing="false" onAction="#goToEntryCreationView" prefHeight="26.0" prefWidth="73.0" style="-fx-background-color: #F6F4EB;" text="Add new">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="226.0" layoutY="12.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="73.0" style="-fx-background-color: #F6F4EB;" text="Generator">
+            <Button layoutX="226.0" layoutY="12.0" mnemonicParsing="false" onAction="#goToGeneratorView" prefHeight="26.0" prefWidth="73.0" style="-fx-background-color: #F6F4EB;" text="Generator">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -47,7 +47,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="52.0" layoutY="385.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #4682A9;" text="Add new" textFill="#fffefe">
+            <Button layoutX="52.0" layoutY="385.0" mnemonicParsing="false" onAction="#goToEntryCreationView" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #4682A9;" text="Add new" textFill="#fffefe">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
