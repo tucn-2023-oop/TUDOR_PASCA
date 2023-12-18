@@ -3,6 +3,7 @@ package com.example.passwordmanager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
@@ -25,6 +26,8 @@ public class Controller {
         }
     }
 
+
+
     @FXML
     void setUserId(int userId) {
         try {
@@ -32,7 +35,6 @@ public class Controller {
             Parent root = (Parent) fxmlLoader.load();
             MainViewController controller = fxmlLoader.getController();
             controller.setUserId(userId);
-            HelloApplication.changeScene("main-view.fxml");
         } catch (IOException exception) {
             System.err.println(exception.getMessage());
         }

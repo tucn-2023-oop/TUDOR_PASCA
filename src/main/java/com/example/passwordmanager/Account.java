@@ -1,10 +1,10 @@
 package com.example.passwordmanager;
 
 public class Account {
-    public String title;
-    public String url;
-    public String username;
-    public String password;
+    private String title;
+    private String url;
+    private String username;
+    private String password;
 
     public Account(String title, String url, String username, String password) {
         this.title = title;

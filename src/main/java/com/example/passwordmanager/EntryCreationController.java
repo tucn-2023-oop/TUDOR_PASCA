@@ -73,6 +73,10 @@ public class EntryCreationController extends Controller implements Initializable
             return;
         }
         int userId = MainViewController.getUserId();
+        if (Database.isTitleTakenByUserId(userId, titleField.getText())) {
+            warningLabel.setText("The title is already used by another entry!");
+            return;
+        }
         Database.writeAccount(userId, titleField.getText(), urlField.getText(), usernameField.getText(), passwordField.getText());
         goToMainView();
     }

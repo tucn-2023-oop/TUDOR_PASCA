@@ -1,15 +1,20 @@
 package com.example.passwordmanager;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+
 import java.awt.datatransfer.StringSelection;
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -26,6 +31,7 @@ public class MainViewController extends Controller implements Initializable {
     @FXML
     private Label passwordLabel;
     private static int userId;
+    private Account selectedAccount;
 
     public void setUserId(int userId) {
         MainViewController.userId = userId;
@@ -37,15 +43,32 @@ public class MainViewController extends Controller implements Initializable {
 
     private void showAccountDetails(Account account) {
         if (account != null) {
-            titleLabel.setText(account.title);
-            urlLabel.setText(account.url);
-            usernameLabel.setText(account.username);
-            passwordLabel.setText(account.password);
+            selectedAccount = account;
+            titleLabel.setText(account.getTitle());
+            urlLabel.setText(account.getUrl());
+            usernameLabel.setText(account.getUsername());
+            passwordLabel.setText(account.getPassword());
         } else {
+            selectedAccount = null;
             titleLabel.setText("");
             urlLabel.setText("");
             usernameLabel.setText("");
             passwordLabel.setText("");
+        }
+    }
+    @FXML
+    public void goToEntryEditor() {
+        if (selectedAccount == null)
+            return;
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("entry-editor-view.fxml"));
+            AnchorPane root = (AnchorPane) fxmlLoader.load();
+            EntryEditorController controller = fxmlLoader.getController();
+            controller.setAccount(selectedAccount);
+            controller.setUserId(userId);
+            HelloApplication.changeScene("entry-editor-view.fxml");
+        } catch (IOException exception) {
+            System.err.println(exception.getMessage());
         }
     }
 

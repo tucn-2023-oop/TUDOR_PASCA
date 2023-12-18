@@ -38,6 +38,27 @@ public class Database {
         }
     }
 
+    public static void writeAccount(int userId, Account account) {
+        String query = "INSERT INTO \"account\"(user_id, username, password, url, title) VALUES(?, ?, ?, ?, ?);";
+        try {
+            Connection connection = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, userId);
+            preparedStatement.setString(2, account.getUsername());
+            preparedStatement.setString(3, account.getPassword());
+            preparedStatement.setString(4, account.getUrl());
+            preparedStatement.setString(5, account.getTitle());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
+    }
+
+    public static void updateAccount(int userId, Account oldAccount, Account newAccount) {
+        deleteAccountByTitle(oldAccount.getTitle());
+        writeAccount(userId, newAccount);
+    }
+
     public static boolean isUserPropertyTaken(String propertyName, String value) {
         String query = "SELECT * FROM \"user\" WHERE " + propertyName + "=?";
         try {
@@ -91,6 +112,21 @@ public class Database {
         } catch (SQLException e) {
             System.err.println(e.getMessage());
             return new ArrayList<>();
+        }
+    }
+
+    public static boolean isTitleTakenByUserId(int userId, String title) {
+        String query = "SELECT * from \"account\" WHERE user_id=? AND title=?";
+        try {
+            Connection connection = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, userId);
+            preparedStatement.setString(2, title);
+            ResultSet result = preparedStatement.executeQuery();
+            return result.isBeforeFirst();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+            return true;
         }
     }
 

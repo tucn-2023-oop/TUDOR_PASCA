@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="528.0" prefWidth="661.0" style="-fx-background-color: #F6F4EB;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.passwordmanager.EntryEditorController">
+   <children>
+      <AnchorPane layoutX="59.0" layoutY="40.0" prefHeight="448.0" prefWidth="544.0" style="-fx-background-color: #fff; -fx-border-color: #000;">
+         <children>
+            <Label layoutX="190.0" layoutY="14.0" prefHeight="46.0" prefWidth="163.0" text="Account Entry Editor">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="59.0" layoutY="71.0" text="Title">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="59.0" layoutY="289.0" text="Password">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="59.0" layoutY="143.0" text="URL">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="59.0" layoutY="211.0" text="Username">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="titleField" layoutX="59.0" layoutY="97.0" prefHeight="26.0" prefWidth="426.0" promptText="Title" />
+            <TextField fx:id="urlField" layoutX="59.0" layoutY="169.0" prefHeight="26.0" prefWidth="426.0" promptText="URL" />
+            <TextField fx:id="usernameField" layoutX="59.0" layoutY="240.0" prefHeight="26.0" prefWidth="426.0" promptText="Username" />
+            <TextField fx:id="passwordField" layoutX="59.0" layoutY="315.0" prefHeight="26.0" prefWidth="426.0" promptText="Password" />
+            <Button layoutX="127.0" layoutY="378.0" mnemonicParsing="false" onAction="#saveAccountChanges" prefHeight="38.0" prefWidth="126.0" style="-fx-background-color: #4682A9;" text="Save changes" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="290.0" layoutY="378.0" mnemonicParsing="false" onAction="#goToMainView" prefHeight="38.0" prefWidth="126.0" style="-fx-background-color: #EF4040;" text="Return" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Label fx:id="warningLabel" layoutX="60.0" layoutY="52.0" prefHeight="18.0" prefWidth="163.0" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
