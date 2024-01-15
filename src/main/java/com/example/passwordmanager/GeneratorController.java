@@ -77,14 +77,18 @@ public class GeneratorController extends Controller {
         return result;
     }
 
-    @FXML
-    public void setPassword() {
+    public StringBuilder generatePassword() {
         final String availableCharacters = getAvailableCharacters();
         StringBuilder password = new StringBuilder();
         for (int i = 0; i < lengthSlider.getValue(); i++) {
             int index = (int)(Math.random() * availableCharacters.length());
             password.append(availableCharacters.charAt(index));
         }
+        return password;
+    }
+    @FXML
+    public void setPassword() {
+        StringBuilder password = generatePassword();
         result.setText(password.toString());
     }
 }
